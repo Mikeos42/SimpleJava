@@ -1,0 +1,73 @@
+/**
+ * Learning Java
+ *
+ * @author Miki
+ */
+public class Core {
+    public static void main(String[] args) {
+
+        Grafikkarte rtx = new Grafikkarte("Nvidia");
+        Mainboard board = new Mainboard("Asus");
+        Monitor monitor = new Monitor("iiyama");
+
+        rtx.getData();
+        board.getData();
+        monitor.getData();
+
+        Computer pc = new Computer(2000, rtx, board, monitor, "Mikeos");
+        pc.getData();
+    }
+}
+
+class Computer {
+    int price;
+    String name;
+    Grafikkarte grafik;
+    Mainboard board;
+    Monitor monitor;
+
+    public Computer(int price, Grafikkarte grafik, Mainboard board, Monitor monitor, String name) {
+        this.price = price;
+        this.grafik = grafik;
+        this.board = board;
+        this.name = name;
+        this.monitor = monitor;
+    }
+
+    public void getData() {
+        System.out.println("PC: " + name);
+        System.out.println("Graficscard: " + grafik.marke);
+        System.out.println("Mainboard: " + board.marke);
+        System.out.println("Monitor: " + monitor.marke);
+        System.out.println("\nPrice - " + price + "\n");
+    }
+}
+
+class Grafikkarte extends Marke {
+
+    public Grafikkarte(String marke) {
+        this.marke = marke;
+    }
+}
+
+class Mainboard extends Marke {
+
+    public Mainboard(String marke) {
+        this.marke = marke;
+    }
+}
+
+class Monitor extends Marke {
+
+    public Monitor(String marke) {
+        this.marke = marke;
+    }
+}
+
+class Marke {
+    String marke;
+
+    public void getData() {
+        System.out.println(this.getClass().getSimpleName() + " der Marke: " + marke + "\n");
+    }
+}
