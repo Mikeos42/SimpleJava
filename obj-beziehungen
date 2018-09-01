@@ -1,3 +1,4 @@
+```java
 /**
  * Learning Java
  *
@@ -71,3 +72,4 @@ class Marke {
         System.out.println(this.getClass().getSimpleName() + " der Marke: " + marke + "\n");
     }
 }
+```
