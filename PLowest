@@ -1,0 +1,17 @@
+public static int low(int[] ints) {
+        int c = 1;
+        boolean is = false;
+        while (true) {
+            for (int i : ints) {
+                is = false;
+                if (i == c) {
+                    is = true;
+                    break;
+                }
+            }
+            if (!is) {
+                return c;
+            }
+            c++;
+        }
+    }
