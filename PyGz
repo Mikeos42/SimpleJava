@@ -1,0 +1,60 @@
+from turtle import *
+speed(200)
+
+up()
+setx(-250)
+sety(0)
+down()
+fd(500)
+
+up()
+setx(0)
+sety(250)
+down()
+
+rt(90)
+fd(500)
+up()
+setx(-250)
+sety(0)
+down()
+
+c = 25
+d = 25
+for i in range(10):
+  goto(0, d)
+  c += 25
+  d += 25
+  up()
+  goto(-250 + c, 0)
+  down()
+
+c = 25
+d = 250
+for i in range(10):
+  goto(0, d)
+  c += 25
+  d -= 25
+  up()
+  goto(c, 0)
+  down()
+
+c = 25
+d = -25
+goto(-250,0)
+for i in range(10):
+  goto(0, d)
+  c += 25
+  d -= 25
+  up()
+  goto(-250 + c, 0)
+  down()
+
+d = -250
+for i in range(10):
+  goto(0, d)
+  c += 25
+  d += 25
+  up()
+  goto(-250 + c, 0)
+  down()
