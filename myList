@@ -1,0 +1,37 @@
+class myList {
+    private int[] ints;
+
+    public myList(int[] ints) {
+        this.ints = ints;
+    }
+
+    public void sout() {
+        for (int i : ints) {
+            System.out.println("->" + i);
+        }
+    }
+
+    public void add(int i) {
+        int[] newAr = new int[ints.length + 1];
+        for (int j = 0; j < ints.length; j++) {
+            newAr[j] = ints[j];
+        }
+        newAr[ints.length] = i;
+        this.ints = newAr;
+    }
+
+    public void remove(int index) {
+        if (index >= ints.length || index < 0) return;
+        int[] newAr = new int[ints.length - 1];
+        int c = 0;
+        for (int j = 0; j < ints.length; j++) {
+            if (j == index) continue;
+            newAr[c++] = ints[j];
+        }
+        ints = newAr;
+    }
+
+    public int length() {
+        return ints.length;
+    }
+}
