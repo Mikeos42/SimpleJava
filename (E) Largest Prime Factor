@@ -1,0 +1,17 @@
+public static void main(String[] args) {
+        int fib = 0, x = 1, y = 2, sum = 0;
+        boolean flip = true;
+        while (fib < 4000000) {
+            fib = x + y;
+            if (flip) {
+                x = fib;
+            } else {
+                y = fib;
+            }
+            flip = !flip;
+            if (fib % 2 == 0) {
+                sum += fib;
+            }
+        }
+        System.out.println(sum+2);
+    }
